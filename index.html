@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thiệp Chúc Mừng 8/3</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-align: center;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+            padding: 50px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            max-width: 700px;
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 36px;
+            animation: glow 1.5s infinite alternate;
+        }
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #ff66b2; }
+            to { text-shadow: 0 0 20px #ff1493; }
+        }
+        p {
+            font-size: 22px;
+            color: #555;
+            margin: 15px 0;
+        }
+        .flower {
+            width: 160px;
+            margin-top: 20px;
+            border-radius: 50%;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease-in-out;
+        }
+        .flower:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+        .decor {
+            position: absolute;
+            width: 50px;
+            opacity: 0.7;
+            animation: float 3s infinite ease-in-out;
+        }
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+        .decor.top-left {
+            top: -20px; left: -20px;
+            animation-delay: 0.5s;
+        }
+        .decor.bottom-right {
+            bottom: -20px; right: -20px;
+            animation-delay: 1s;
+        }
+        .falling-flower {
+            position: absolute;
+            width: 40px;
+            opacity: 0.8;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% { transform: translateY(-100vh) rotate(0deg); }
+            100% { transform: translateY(100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>💐 Chúc Mừng Ngày 8/3 💐</h1>
+        <p>Gửi đến bạn những lời chúc tốt đẹp nhất. Chúc bạn luôn xinh đẹp, hạnh phúc và tràn đầy niềm vui!</p>
+        <p>Chúc bạn có một ngày 8/3 tràn ngập yêu thương! 💖</p>
+        <img class="flower" src="roses-8247285_640.jpg" alt="Hoa chúc mừng">
+        <img class="decor top-left" src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Trang trí">
+        <img class="decor bottom-right" src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Trang trí">
+    </div>
+    <script>
+        function createFallingFlower() {
+            const flower = document.createElement("img");
+            flower.src = "pngegg.png";
+            flower.classList.add("falling-flower");
+            flower.style.left = Math.random() * window.innerWidth + "px";
+            flower.style.animationDuration = (Math.random() * 3 + 2) + "s";
+            document.body.appendChild(flower);
+            setTimeout(() => flower.remove(), 5000);
+        }
+        setInterval(createFallingFlower, 200);
+    </script>
+</body>
+</html>
